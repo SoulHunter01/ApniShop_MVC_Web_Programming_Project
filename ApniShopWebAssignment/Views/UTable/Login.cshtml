@@ -1,0 +1,78 @@
+﻿@model ApniShopWebAssignment.Models.UTable
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<br />
+<br />
+
+<div class="row" style="        margin: auto;
+        width: 40%;
+        border: 10px solid rgb(128, 0, 128);
+        padding: 10px;
+        background: white;
+        font-family: 'Public Sans', sans-serif;
+">
+    <div style="margin: auto; width: 50%; padding: 10px; ">
+        <div class="card">
+            <div class="card-header">
+                <h2  style ="text-align: center;">User Login</h2>
+                <br>
+            </div>
+
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group" style ="text-align: center;">
+                        <h4>UserName </h4>
+                        @Html.EditorFor(model => model.Uname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Uname, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Password </h4>
+                        @Html.EditorFor(model => model.UPassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UPassword, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Are You An Admin? </h4>
+                        @Html.EditorFor(model => model.UIsAdmin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UIsAdmin, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group"  style ="text-align: center;">
+                        <input type="submit" value="Login" class="btn btn-primary btn-lg" />
+                    </div>
+
+                    <div class="form-group"  style ="text-align: center;">
+                        <label class="label-danger">@ViewBag.ErrorMessage</label>
+                    </div>
+
+                    <div class="form-group"  style ="text-align: center;">
+                        <h5>NOT ALREADY A MEMBER?</h5>
+                        <h5 style="align-items:center;">@Html.ActionLink("SignUp", "Registration", "UTable")</h5>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .form-control {
+        border: 0px none;
+    }
+
+</style>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

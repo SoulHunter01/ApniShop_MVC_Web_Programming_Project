@@ -1,0 +1,57 @@
+﻿@model ApniShopWebAssignment.Models.UTable
+
+@{
+    ViewBag.Title = "ShowUserName";
+}
+
+<br />
+<br />
+
+<div class="row" style="margin: auto;
+        width: 80%;
+        height: 80%;
+        border: 10px solid rgb(128, 0, 128);
+        padding: 10px;
+        background: white;
+        font-family: 'Public Sans', sans-serif;
+">
+    <h2>ShowUserName</h2>
+
+    <div>
+        <hr style="border: 1px solid black;" />
+        <dl class="dl-horizontal">
+            <dt style="font-weight: bolder">
+                User ID
+            </dt>
+
+            <dd style="font-weight: bold">
+                @Html.DisplayFor(model => model.UID)
+            </dd>
+
+            <dt style="font-weight: bolder">
+                Username
+            </dt>
+
+            <dd style="font-weight: bold">
+                @Html.DisplayFor(model => model.Uname)
+            </dd>
+
+            <dt style="font-weight: bolder">
+               Password
+            </dt>
+
+            <dd style="font-weight: bold">
+                @Html.DisplayFor(model => model.UPassword)
+            </dd>
+
+            <dt style="font-weight: bolder">
+                Admin(Yes/No)
+            </dt>
+
+            <dd style="font-weight: bold">
+                @Html.DisplayFor(model => model.UIsAdmin)
+            </dd>
+
+        </dl>
+    </div>
+</div>

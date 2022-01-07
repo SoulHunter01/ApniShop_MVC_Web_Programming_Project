@@ -1,0 +1,100 @@
+﻿@model ApniShopWebAssignment.Models.UTable
+
+@{
+    ViewBag.Title = "EditProfile";
+}
+
+<br />
+<br />
+
+<div class="row" style="        margin: auto;
+        width: 40%;
+        border: 10px solid rgb(128, 0, 128);
+        padding: 10px;
+        background: white;
+        font-family: 'Public Sans', sans-serif;
+">
+    <div style="margin: auto; width: 50%; padding: 10px; ">
+        <div class="card">
+            <div class="card-header">
+                <h2 style="text-align: center;">Edit Profile</h2>
+                <br>
+            </div>
+
+            <div class="card-body">
+                @using (Html.BeginForm("EditProfile", "UTable", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr style="border: 1px solid black;" />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        User ID
+                        @Html.EditorFor(model => model.UID, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UID, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        Username
+                        @Html.EditorFor(model => model.Uname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Uname, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        Password
+                        @Html.EditorFor(model => model.UPassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UPassword, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        Are you an Admin(Yes/No)?
+                        @Html.EditorFor(model => model.UIsAdmin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UIsAdmin, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        Gender
+                        @Html.EditorFor(model => model.UGender, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UGender, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        Birthday
+                        @Html.EditorFor(model => model.UBirthday, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UBirthday, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        Current Address
+                        @Html.EditorFor(model => model.UAddress, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UAddress, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        Mobile No(+)
+                        @Html.EditorFor(model => model.UMobileNo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UMobileNo, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UProfilePicturePath, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <input type="file" name="ImageFile" required>
+                        @Html.ValidationMessageFor(model => model.UProfilePicturePath, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <input type="submit" value="Edit" class="btn btn-primary btn-lg" />
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-control {
+        border: 0px none;
+    }
+</style>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ApniShopWebAssignment.Models.UPTable>
+
+@{
+    ViewBag.Title = "AdminIndex";
+}
+
+<br />
+<br />
+
+<div class="row" style="margin: auto;
+        width: 80%;
+        height: 80%;
+        border: 10px solid rgb(128, 0, 128);
+        padding: 10px;
+        background: white;
+        font-family: 'Public Sans', sans-serif;
+">
+
+    <label class="label-success">@ViewBag.SuccessMessage</label>
+    <table class="table">
+        <tr>
+            <th>
+                Product ID
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Product Image
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Wishlist
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UPID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UPNAME)
+                </td>
+                <td>
+                    <img src="@Url.Content(item.UPImage)" width="250" height="250" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UPCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UPRating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UPPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UPWish)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UPQuantity)
+                </td>
+                <td>
+                    @Html.ActionLink("Approve", "AddProductToProductDatabase", "UTable", new { id = item.UPID, id2 = item.UPNAME }, null)|
+                    @Html.ActionLink("Not Approve", "RemoveProductFromTempDatabase", "UTable", new { id = item.UPID }, null)|
+
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

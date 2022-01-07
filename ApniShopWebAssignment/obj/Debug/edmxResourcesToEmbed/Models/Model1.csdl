@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoginRegisterDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="OTable">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="OrderStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderDate" Type="DateTime" Precision="0" />
+    <Property Name="OrderShippingDate" Type="DateTime" Precision="0" />
+    <Property Name="OrderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderPostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShippingServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="ProductRating" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PTable">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRating" Type="Int32" />
+    <Property Name="PPrice" Type="Double" />
+    <Property Name="PWish" Type="Int32" />
+    <Property Name="PQuantity" Type="Int32" />
+    <Property Name="popularity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UPTable">
+    <Key>
+      <PropertyRef Name="UPID" />
+    </Key>
+    <Property Name="UPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UPCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPRating" Type="Int32" />
+    <Property Name="UPPrice" Type="Double" />
+    <Property Name="UPWish" Type="Int32" />
+    <Property Name="UPQuantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UTable">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UIsAdmin" Type="Boolean" />
+    <Property Name="UGender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UBirthday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UProfilePicturePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UMobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="LoginRegisterDatabaseEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OTables" EntityType="Self.OTable" />
+    <EntitySet Name="PTables" EntityType="Self.PTable" />
+    <EntitySet Name="UPTables" EntityType="Self.UPTable" />
+    <EntitySet Name="UTables" EntityType="Self.UTable" />
+  </EntityContainer>
+</Schema>

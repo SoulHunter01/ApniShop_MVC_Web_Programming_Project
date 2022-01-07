@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ApniShopWebAssignment.Models.PTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<table class="table" style="position:relative; left:200px; top:0px; text-align:center;">
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+
+            <img src="@Url.Content(item.PImage)" width="250" height="250" />
+            <h5>ProductID: @Html.DisplayFor(modelItem => item.PID) </h5>
+            <h5>Name:@Html.DisplayFor(modelItem => item.PName)</h5>
+            <h5>Rating: @Html.DisplayFor(modelItem => item.PRating)</h5>
+            <h5>Price: @Html.DisplayFor(modelItem => item.PPrice) </h5>
+            <h4>Wish: @Html.DisplayFor(modelItem => item.PWish) </h4>
+            <h4>Quantity: @Html.DisplayFor(modelItem => item.PQuantity) </h4>
+            @Html.ActionLink("Order Now", "OrderNow", "Product", new { id = item.PID }, new { @class = "ui-btn" })
+            <br />
+            @Html.ActionLink("Add Product To WishList", "WishList", "Product", new { id = item.PID }, new { @class = "ui-btn" })
+            <br />
+            @Html.ActionLink("Remove Product From WishList", "WishListRemove", "Product", new { id = item.PID }, new { @class = "ui-btn" })
+
+        </td>
+        <br />
+    </tr>
+    }
+
+</table>
+

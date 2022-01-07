@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ApniShopWebAssignment.Models.OTable>
+
+@{
+    ViewBag.Title = "userOrders";
+}
+
+<br />
+<br />
+
+<div class="row" style="
+        width: 100%;
+        border: 10px solid rgb(128, 0, 128);
+        padding: 10px;
+        background: white;
+        font-family: 'Public Sans', sans-serif;
+">
+    <div style="margin: auto; width: 50%; padding: 10px; ">
+        <div class="card">
+            <div class="card-header">
+                <h2 style="text-align: center; font-weight: bolder;">Recent Orders</h2>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.OrderID)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderDate)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderAddress)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderCity)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderPostalCode)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderCountry)</th>
+            <th>@Html.DisplayNameFor(model => model.ShippingServiceName)</th>
+            <th>@Html.DisplayNameFor(model => model.ProductRating)</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.OrderID)</td>
+                <td>@Html.DisplayFor(modelItem => item.OrderDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.OrderAddress)</td>
+                <td>@Html.DisplayFor(modelItem => item.OrderCity)</td>
+                <td>@Html.DisplayFor(modelItem => item.OrderPostalCode)</td>
+                <td>@Html.DisplayFor(modelItem => item.OrderCountry)</td>
+                <td>@Html.DisplayFor(modelItem => item.ShippingServiceName)</td>
+                @if (item.ProductRating == 1)
+                {
+                    <td><img src="~/Image/Star.png" height="30" width="30" /></td>
+                }
+                else if (item.ProductRating == 2)
+                {
+                    <td>
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                    </td>
+                }
+                else if (item.ProductRating == 3)
+                {
+                    <td>
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                    </td>
+                }
+                else if (item.ProductRating == 4)
+                {
+                    <td>
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                    </td>
+                }
+                else if (item.ProductRating == 5)
+                {
+                    <td>
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                        <img src="~/Image/Star.png" height="30" width="30" />
+                    </td>
+                }
+                else
+                {
+                    <td>@Html.DisplayFor(modelItem => item.ProductRating)</td>
+                }
+                <td>@Html.ActionLink("Give Rating", "GiveRating", new { id = item.OrderID }, new { @class = "ui-btn" })</td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LoginRegisterDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OTable">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="50" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="OrderShippingDate" Type="date" />
+          <Property Name="OrderAddress" Type="varchar" MaxLength="50" />
+          <Property Name="OrderCity" Type="varchar" MaxLength="50" />
+          <Property Name="OrderPostalCode" Type="varchar" MaxLength="50" />
+          <Property Name="OrderCountry" Type="varchar" MaxLength="50" />
+          <Property Name="ShippingServiceName" Type="varchar" MaxLength="50" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="ProductRating" Type="int" />
+        </EntityType>
+        <EntityType Name="PTable">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PName" Type="varchar" MaxLength="50" />
+          <Property Name="PImage" Type="varchar(max)" />
+          <Property Name="PCategory" Type="varchar" MaxLength="50" />
+          <Property Name="PRating" Type="int" />
+          <Property Name="PPrice" Type="float" />
+          <Property Name="PWish" Type="int" />
+          <Property Name="PQuantity" Type="int" />
+          <Property Name="popularity" Type="int" />
+        </EntityType>
+        <EntityType Name="UPTable">
+          <Key>
+            <PropertyRef Name="UPID" />
+          </Key>
+          <Property Name="UPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UPNAME" Type="varchar" MaxLength="50" />
+          <Property Name="UPImage" Type="varchar(max)" />
+          <Property Name="UPCategory" Type="varchar" MaxLength="50" />
+          <Property Name="UPRating" Type="int" />
+          <Property Name="UPPrice" Type="float" />
+          <Property Name="UPWish" Type="int" />
+          <Property Name="UPQuantity" Type="int" />
+        </EntityType>
+        <EntityType Name="UTable">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uname" Type="varchar" MaxLength="50" />
+          <Property Name="UPassword" Type="varchar" MaxLength="50" />
+          <Property Name="UIsAdmin" Type="bit" />
+          <Property Name="UGender" Type="varchar" MaxLength="50" />
+          <Property Name="UBirthday" Type="varchar" MaxLength="50" />
+          <Property Name="UAddress" Type="varchar" MaxLength="150" />
+          <Property Name="UProfilePicturePath" Type="varchar(max)" />
+          <Property Name="UMobileNo" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityContainer Name="LoginRegisterDatabaseModelStoreContainer">
+          <EntitySet Name="OTable" EntityType="Self.OTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PTable" EntityType="Self.PTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UPTable" EntityType="Self.UPTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UTable" EntityType="Self.UTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LoginRegisterDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OTable">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="OrderStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="OrderShippingDate" Type="DateTime" Precision="0" />
+          <Property Name="OrderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderPostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="ProductRating" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PTable">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRating" Type="Int32" />
+          <Property Name="PPrice" Type="Double" />
+          <Property Name="PWish" Type="Int32" />
+          <Property Name="PQuantity" Type="Int32" />
+          <Property Name="popularity" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UPTable">
+          <Key>
+            <PropertyRef Name="UPID" />
+          </Key>
+          <Property Name="UPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UPCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPRating" Type="Int32" />
+          <Property Name="UPPrice" Type="Double" />
+          <Property Name="UPWish" Type="Int32" />
+          <Property Name="UPQuantity" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UTable">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UIsAdmin" Type="Boolean" />
+          <Property Name="UGender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UBirthday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UProfilePicturePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UMobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="LoginRegisterDatabaseEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OTables" EntityType="Self.OTable" />
+          <EntitySet Name="PTables" EntityType="Self.PTable" />
+          <EntitySet Name="UPTables" EntityType="Self.UPTable" />
+          <EntitySet Name="UTables" EntityType="Self.UTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LoginRegisterDatabaseModelStoreContainer" CdmEntityContainer="LoginRegisterDatabaseEntities2">
+          <EntitySetMapping Name="OTables">
+            <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.OTable">
+              <MappingFragment StoreEntitySet="OTable">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderShippingDate" ColumnName="OrderShippingDate" />
+                <ScalarProperty Name="OrderAddress" ColumnName="OrderAddress" />
+                <ScalarProperty Name="OrderCity" ColumnName="OrderCity" />
+                <ScalarProperty Name="OrderPostalCode" ColumnName="OrderPostalCode" />
+                <ScalarProperty Name="OrderCountry" ColumnName="OrderCountry" />
+                <ScalarProperty Name="ShippingServiceName" ColumnName="ShippingServiceName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductRating" ColumnName="ProductRating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PTables">
+            <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.PTable">
+              <MappingFragment StoreEntitySet="PTable">
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="PName" ColumnName="PName" />
+                <ScalarProperty Name="PImage" ColumnName="PImage" />
+                <ScalarProperty Name="PCategory" ColumnName="PCategory" />
+                <ScalarProperty Name="PRating" ColumnName="PRating" />
+                <ScalarProperty Name="PPrice" ColumnName="PPrice" />
+                <ScalarProperty Name="PWish" ColumnName="PWish" />
+                <ScalarProperty Name="PQuantity" ColumnName="PQuantity" />
+                <ScalarProperty Name="popularity" ColumnName="popularity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UPTables">
+            <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.UPTable">
+              <MappingFragment StoreEntitySet="UPTable">
+                <ScalarProperty Name="UPID" ColumnName="UPID" />
+                <ScalarProperty Name="UPNAME" ColumnName="UPNAME" />
+                <ScalarProperty Name="UPImage" ColumnName="UPImage" />
+                <ScalarProperty Name="UPCategory" ColumnName="UPCategory" />
+                <ScalarProperty Name="UPRating" ColumnName="UPRating" />
+                <ScalarProperty Name="UPPrice" ColumnName="UPPrice" />
+                <ScalarProperty Name="UPWish" ColumnName="UPWish" />
+                <ScalarProperty Name="UPQuantity" ColumnName="UPQuantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UTables">
+            <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.UTable">
+              <MappingFragment StoreEntitySet="UTable">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="Uname" ColumnName="Uname" />
+                <ScalarProperty Name="UPassword" ColumnName="UPassword" />
+                <ScalarProperty Name="UIsAdmin" ColumnName="UIsAdmin" />
+                <ScalarProperty Name="UGender" ColumnName="UGender" />
+                <ScalarProperty Name="UBirthday" ColumnName="UBirthday" />
+                <ScalarProperty Name="UAddress" ColumnName="UAddress" />
+                <ScalarProperty Name="UProfilePicturePath" ColumnName="UProfilePicturePath" />
+                <ScalarProperty Name="UMobileNo" ColumnName="UMobileNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

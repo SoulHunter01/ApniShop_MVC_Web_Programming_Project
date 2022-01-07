@@ -1,0 +1,148 @@
+﻿@model ApniShopWebAssignment.Models.UTable
+
+@{
+    ViewBag.Title = "ProfilePage";
+}
+
+<br />
+<br />
+
+<div class="row" style="margin: auto; width: 100%; border: 10px solid rgb(128, 0, 128); padding: 20px; background: white; font-family: 'Public Sans', sans-serif;">
+    <div class="col-md-6">
+        <img src="@Url.Content(Model.UProfilePicturePath)" style="border-radius: 50%; height: 40%; width: 40%;" />
+    </div>
+    <div class="card">
+
+        <div style="margin: auto; width: 30%; padding: 10px;">
+            <div class="row">
+
+                <div class="card-header">
+                    <h2>Profile Page</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <hr style="border: 1px solid black;" />
+
+            <div class="row" style="left: -30px;">
+                <div class="column col-md-4" style="border-right: 2px solid black;">
+                    <span style="font-weight: bolder; font-size: 20px;">User ID:</span>
+                    @Html.DisplayFor(model => model.UID)
+                    <br />
+                    <span style="font-weight: bolder; font-size: 20px;">Username:</span>
+                    @Html.DisplayFor(model => model.Uname)
+                    <br />
+                    <span style="font-weight: bolder; font-size: 20px;">Password:</span>
+                    @Html.DisplayFor(model => model.UPassword)
+                </div>
+                <div class="column col-md-4" style="border-right: 2px solid black;">
+                    <span style="font-weight: bolder; font-size: 20px;">Gender</span>
+                    @Html.DisplayFor(model => model.UGender)
+                    <br />
+                    <span style="font-weight: bolder; font-size: 20px;">Birthday:</span>
+                    @Html.DisplayFor(model => model.UBirthday)
+                    <br />
+                    <span style="font-weight: bolder; font-size: 20px;">Mobile No(+):</span>
+                    @Html.DisplayFor(model => model.UMobileNo)
+                </div>
+                <div class="column col-md-4">
+                    <span style="font-weight: bolder; font-size: 20px">Current Address:</span>
+                    @Html.DisplayFor(model => model.UAddress)
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="column col-md-4">
+
+                </div>
+                <div class="column col-md-4 text-center">
+                    @Html.ActionLink("Edit Profile", "EditProfile", new { id = Model.UID }, new { @class = "my-link btn btn-primary" })
+                    @Html.ActionLink("Recent Orders", "userOrders", new { id = Model.UID }, new { @class = "my-link btn btn-primary" })
+                </div>
+            </div>
+            <!--
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.UID)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UID)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Uname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Uname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UPassword)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UPassword)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UIsAdmin)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UIsAdmin)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UGender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UGender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UBirthday)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UBirthday)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UAddress)
+                </dd>
+
+            </dl>
+            -->
+        </div>
+    </div>
+</div>
+
+<style>
+    .column {
+        width: 30%;
+    }
+
+    a.my-link {
+        color: white;
+    }
+
+        a.my-link:active {
+            color: white;
+        }
+
+        a.my-link:link {
+            color: white;
+        }
+
+        a.my-link:visited {
+            color: white;
+        }
+</style>

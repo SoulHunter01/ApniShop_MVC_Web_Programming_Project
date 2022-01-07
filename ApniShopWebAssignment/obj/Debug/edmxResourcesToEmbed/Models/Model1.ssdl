@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoginRegisterDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="OTable">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="OrderStatus" Type="varchar" MaxLength="50" />
+    <Property Name="OrderDate" Type="date" />
+    <Property Name="OrderShippingDate" Type="date" />
+    <Property Name="OrderAddress" Type="varchar" MaxLength="50" />
+    <Property Name="OrderCity" Type="varchar" MaxLength="50" />
+    <Property Name="OrderPostalCode" Type="varchar" MaxLength="50" />
+    <Property Name="OrderCountry" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingServiceName" Type="varchar" MaxLength="50" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ProductRating" Type="int" />
+  </EntityType>
+  <EntityType Name="PTable">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PName" Type="varchar" MaxLength="50" />
+    <Property Name="PImage" Type="varchar(max)" />
+    <Property Name="PCategory" Type="varchar" MaxLength="50" />
+    <Property Name="PRating" Type="int" />
+    <Property Name="PPrice" Type="float" />
+    <Property Name="PWish" Type="int" />
+    <Property Name="PQuantity" Type="int" />
+    <Property Name="popularity" Type="int" />
+  </EntityType>
+  <EntityType Name="UPTable">
+    <Key>
+      <PropertyRef Name="UPID" />
+    </Key>
+    <Property Name="UPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UPNAME" Type="varchar" MaxLength="50" />
+    <Property Name="UPImage" Type="varchar(max)" />
+    <Property Name="UPCategory" Type="varchar" MaxLength="50" />
+    <Property Name="UPRating" Type="int" />
+    <Property Name="UPPrice" Type="float" />
+    <Property Name="UPWish" Type="int" />
+    <Property Name="UPQuantity" Type="int" />
+  </EntityType>
+  <EntityType Name="UTable">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Uname" Type="varchar" MaxLength="50" />
+    <Property Name="UPassword" Type="varchar" MaxLength="50" />
+    <Property Name="UIsAdmin" Type="bit" />
+    <Property Name="UGender" Type="varchar" MaxLength="50" />
+    <Property Name="UBirthday" Type="varchar" MaxLength="50" />
+    <Property Name="UAddress" Type="varchar" MaxLength="150" />
+    <Property Name="UProfilePicturePath" Type="varchar(max)" />
+    <Property Name="UMobileNo" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityContainer Name="LoginRegisterDatabaseModelStoreContainer">
+    <EntitySet Name="OTable" EntityType="Self.OTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTable" EntityType="Self.PTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UPTable" EntityType="Self.UPTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UTable" EntityType="Self.UTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

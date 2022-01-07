@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoginRegisterDatabaseModelStoreContainer" CdmEntityContainer="LoginRegisterDatabaseEntities2">
+    <EntitySetMapping Name="OTables">
+      <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.OTable">
+        <MappingFragment StoreEntitySet="OTable">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderShippingDate" ColumnName="OrderShippingDate" />
+          <ScalarProperty Name="OrderAddress" ColumnName="OrderAddress" />
+          <ScalarProperty Name="OrderCity" ColumnName="OrderCity" />
+          <ScalarProperty Name="OrderPostalCode" ColumnName="OrderPostalCode" />
+          <ScalarProperty Name="OrderCountry" ColumnName="OrderCountry" />
+          <ScalarProperty Name="ShippingServiceName" ColumnName="ShippingServiceName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductRating" ColumnName="ProductRating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PTables">
+      <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.PTable">
+        <MappingFragment StoreEntitySet="PTable">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="PImage" ColumnName="PImage" />
+          <ScalarProperty Name="PCategory" ColumnName="PCategory" />
+          <ScalarProperty Name="PRating" ColumnName="PRating" />
+          <ScalarProperty Name="PPrice" ColumnName="PPrice" />
+          <ScalarProperty Name="PWish" ColumnName="PWish" />
+          <ScalarProperty Name="PQuantity" ColumnName="PQuantity" />
+          <ScalarProperty Name="popularity" ColumnName="popularity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UPTables">
+      <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.UPTable">
+        <MappingFragment StoreEntitySet="UPTable">
+          <ScalarProperty Name="UPID" ColumnName="UPID" />
+          <ScalarProperty Name="UPNAME" ColumnName="UPNAME" />
+          <ScalarProperty Name="UPImage" ColumnName="UPImage" />
+          <ScalarProperty Name="UPCategory" ColumnName="UPCategory" />
+          <ScalarProperty Name="UPRating" ColumnName="UPRating" />
+          <ScalarProperty Name="UPPrice" ColumnName="UPPrice" />
+          <ScalarProperty Name="UPWish" ColumnName="UPWish" />
+          <ScalarProperty Name="UPQuantity" ColumnName="UPQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UTables">
+      <EntityTypeMapping TypeName="LoginRegisterDatabaseModel.UTable">
+        <MappingFragment StoreEntitySet="UTable">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Uname" ColumnName="Uname" />
+          <ScalarProperty Name="UPassword" ColumnName="UPassword" />
+          <ScalarProperty Name="UIsAdmin" ColumnName="UIsAdmin" />
+          <ScalarProperty Name="UGender" ColumnName="UGender" />
+          <ScalarProperty Name="UBirthday" ColumnName="UBirthday" />
+          <ScalarProperty Name="UAddress" ColumnName="UAddress" />
+          <ScalarProperty Name="UProfilePicturePath" ColumnName="UProfilePicturePath" />
+          <ScalarProperty Name="UMobileNo" ColumnName="UMobileNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

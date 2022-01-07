@@ -1,0 +1,121 @@
+﻿@model ApniShopWebAssignment.Models.PTable
+
+@{
+    ViewBag.Title = "Add Product To Database";
+}
+
+<h2 style="text-align:center;">Add Product To Database</h2>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap" rel="stylesheet">
+</head>
+<div class="row" style="        margin: auto;
+        width: 40%;
+        border: 10px solid rgb(128, 0, 128);
+        padding: 10px;
+        background: white;
+        font-family: 'Public Sans', sans-serif;">
+    <div style="margin: auto; width: 50%; padding: 10px; ">
+        <div class="card">
+            <div class="card-header">
+                <h2 style="text-align: center;">User Login</h2>
+                <br>
+            </div>
+            @using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                   
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Product ID</h4>
+                        @Html.EditorFor(model => model.PID, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PID, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Name</h4>
+                        @Html.EditorFor(model => model.PName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Image</h4>
+                        <input type="file" name="ImageFile" class="btn btn-primary btn-sm" required>
+
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Category</h4>
+                        @Html.EditorFor(model => model.PCategory, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PCategory, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Rating</h4>
+                        @Html.EditorFor(model => model.PRating, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PRating, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Price</h4>
+                        @Html.EditorFor(model => model.PPrice, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PPrice, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Wish Count</h4>
+                        @Html.EditorFor(model => model.PWish, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PWish, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Quantity</h4>
+                        @Html.EditorFor(model => model.PQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PQuantity, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <h4>Popularity</h4>
+
+                        @Html.EditorFor(model => model.popularity, new { htmlAttributes = new { @class = "form-control", @style = "text-align: center;" } })
+                        @Html.ValidationMessageFor(model => model.popularity, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <input type="submit" value="Add To Database" class="btn btn-primary btn-lg" />
+                    </div>
+
+
+                    <div class="form-group" style="text-align: center;">
+                        <label class="label-success">@ViewBag.SuccessMessage</label>
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <label class="label-success">@ViewBag.ErrorMessage</label>
+                    </div>
+
+
+                </div>
+            }
+        </div>
+        </div>
+    </div>
+        <style>
+            .form-control {
+                border: 0px none;
+            }
+        </style>
+        <div>
+            @Html.ActionLink("Back to List", "AdminIndex",null,null, new { @class = "btn btn-primary btn-lg" })
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

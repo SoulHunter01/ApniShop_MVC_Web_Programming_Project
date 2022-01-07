@@ -1,0 +1,36 @@
+﻿@model ApniShopWebAssignment.Models.OTable
+
+@{
+    ViewBag.Title = "Order Details";
+}
+
+<h2 style="text-align:center;">Order Details </h2>
+
+<div class="row" style="        margin: auto;
+        width: 40%;
+        border: 10px solid rgb(128, 0, 128);
+        padding: 10px;
+        background: white;
+        font-family: 'Public Sans', sans-serif;
+">
+    <dl class="dl-horizontal" style="position:relative; left:0px; top:0px; text-align:left;">
+        <h5>Order ID: @Html.DisplayFor(model => model.OrderID)</h5>
+        <h5>Customer ID: @Html.DisplayFor(model => model.CustomerID)</h5>
+        <h5>Status: @Html.DisplayFor(model => model.OrderStatus)</h5>
+        <h5>Order Date: @Html.DisplayFor(model => model.OrderDate)</h5>
+        <h5>Shipping Date: @Html.DisplayFor(model => model.OrderShippingDate)</h5>
+        <h5>Address: @Html.DisplayFor(model => model.OrderAddress)</h5>
+        <h5>City: @Html.DisplayFor(model => model.OrderCity)</h5>
+        <h5>Postal: @Html.DisplayFor(model => model.OrderPostalCode)</h5>
+        <h5>Country: @Html.DisplayFor(model => model.OrderCountry)</h5>
+        <h5>ServiceName: @Html.DisplayFor(model => model.ShippingServiceName)</h5>
+        <h5>Product ID: @Html.DisplayFor(model => model.ProductID)</h5>
+        <label class="label-success">@ViewBag.ErrorMessage</label>
+
+    </dl>
+</div>
+
+
+<p>
+    @Html.ActionLink("LogOut", "Login","UTable",null,new { @class = "btn btn-primary btn-sm" })
+</p>
